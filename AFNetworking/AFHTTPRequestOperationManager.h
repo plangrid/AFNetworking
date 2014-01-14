@@ -108,6 +108,20 @@
  */
 @property (nonatomic, strong) NSOperationQueue *operationQueue;
 
+///---------------------------------
+/// @name Managing Callback Queues
+///---------------------------------
+
+/**
+ The default dispatch queue for the `completionBlock` of request operations created by this manager. If `NULL` (default), the main queue is the default.
+ */
+@property (nonatomic, strong) dispatch_queue_t completionQueue;
+
+/**
+ The default dispatch group for the `completionBlock` of request operations created by this manager. If `NULL` (default), a private dispatch group is used.
+ */
+@property (nonatomic, strong) dispatch_group_t completionGroup;
+
 ///-------------------------------
 /// @name Managing URL Credentials
 ///-------------------------------
